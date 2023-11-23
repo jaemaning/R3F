@@ -1,0 +1,8 @@
+html, body, #root {
+  width: 100vw;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+  height: 500vh;
+  overflow-y: hidden;
+}

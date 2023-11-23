@@ -1,0 +1,11 @@
+.S1_container {
+    background-image: linear-gradient(rgba(3, 192, 60, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(3, 192, 60, .3) 1px, transparent 1px);
+    background-size: 1em 1em;
+    width: 100vw;
+    height: 100vh;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}

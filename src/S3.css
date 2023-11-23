@@ -1,0 +1,10 @@
+.S3_container {
+    width: 100vw;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}

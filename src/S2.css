@@ -1,0 +1,12 @@
+.S2_container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #cff37b;
+    box-sizing: border-box; /* 추가 */
+    padding: 2rem;
+}
+
+p {
+    padding: 2rem;
+    margin-top: 1rem;
+}
