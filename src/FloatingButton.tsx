@@ -17,7 +17,7 @@ const ButtonItem = styled.li`
   margin-bottom: 12px;
 `;
 
-const NavBullet = styled.button`
+const NavBullet = styled.button<{ $count: number }>`
   position: relative;
   width: 1.1em;
   height: 1.1em;
@@ -47,8 +47,13 @@ const NavBullet = styled.button`
   }
 `;
 
+type FloatingButtonProps = {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+  setDimensionHeight: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const FloatingButton = ({ count, setCount, setDimensionHeight }) => {
+const FloatingButton = ({ count, setCount, setDimensionHeight }: FloatingButtonProps) => {
 
   useEffect(()=>{
     console.log("카운트는?"+count)

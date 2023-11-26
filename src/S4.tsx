@@ -1,4 +1,3 @@
-import React from 'react';
 import "./S4.css"
 import { FaGithubSquare } from "react-icons/fa";
 import styled from 'styled-components';
@@ -171,9 +170,9 @@ const LastDivStyle = styled.div`
 `
 
 
-const S4 = ({handleClick}) => {
+const S4 = ({handleClick} : { handleClick: (event: React.MouseEvent) => void }) => {
 
-    const navigateToUrl = (e, url) => {
+    const navigateToUrl = (e: React.MouseEvent, url: string) => {
         e.stopPropagation();
         window.location.href = url;
     };

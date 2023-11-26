@@ -1,22 +1,18 @@
 import "./S1.css"
-import { createRoot } from 'react-dom/client'
-import React, { useRef, useState, useEffect } from 'react'
-// import { Canvas, useFrame } from '@react-three/fiber'
+import React, { useRef, useEffect } from 'react'
 import * as THREE from "three";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 
-const S1 = ({handleClick}) => {
-    const mountRef = useRef(null);
+const S1 = ({handleClick}: { handleClick: (event: React.MouseEvent) => void }) => {
+    const mountRef = useRef<HTMLDivElement>(null);
     const FLOOR_COLOR = 0xFFA500
-    // const [mouseX, setMouseX] = useState(0);
-    // const [mouseY, setMouseY] = useState(0);
     const mouseX = useRef(0);
     const mouseY = useRef(0);
 
     // 마우스 움직임에 대한 이벤트 핸들러
-    const onMouseMove = e => {
+    const onMouseMove = (e : MouseEvent) => {
         const windowHalfX = window.innerWidth / 2;
         const windowHalfY = window.innerHeight / 2;
         // calculateCoordinates(e.clientX, e.clientY);
@@ -26,6 +22,9 @@ const S1 = ({handleClick}) => {
 
     useEffect(() => {
         const currentRef = mountRef.current;
+
+        if (!currentRef) return;
+
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(70, currentRef.clientWidth / currentRef.clientHeight, 0.1, 10000);
         const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -41,7 +40,7 @@ const S1 = ({handleClick}) => {
 
         const fontLoader = new FontLoader();
         //     // 폰트 파일의 경로를 지정합니다. 이 폰트 파일은 JSON 형식이어야 합니다.
-        fontLoader.load('../src/fonts/helvetiker_regular.typeface.json', (font) => {
+        fontLoader.load('../src/fonts/helvetiker_regular.typeface.json', (font : any) => {
             textMesh.geometry = new TextGeometry('I`m Jaeman\nFrontEnd Developer\nWelcome\nMy Portfolio', {
                 font: font,
                 size: 100,
@@ -59,7 +58,7 @@ const S1 = ({handleClick}) => {
             scene.add(textMesh);
         });
 
-        const generateRandomMesh = (geometry, material, count) => {
+        const generateRandomMesh = (geometry : any, material : any, count : number) => {
             for (let i = 0; i < count; i++) {
             const mesh = new THREE.Mesh(geometry, material);
             const dist = 120 * i;
@@ -144,7 +143,9 @@ const S1 = ({handleClick}) => {
         document.addEventListener('mousemove', onMouseMove, false);
 
         return () => {
-            currentRef.removeChild(renderer.domElement);
+            if (currentRef) {
+                currentRef.removeChild(renderer.domElement);
+            }
             document.removeEventListener('mousemove', onMouseMove, false);
         };
 

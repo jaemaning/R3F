@@ -59,14 +59,14 @@ const slideOutToRight = keyframes`
     }
 `;
 
-const ImageContainer = styled.img`
+const ImageContainer = styled.img<{$isVisible: boolean}>`
     width: 33vw;
     height: auto;
     padding: 2rem;
     animation: ${({ $isVisible }) => $isVisible ? css`${slideInFromLeft} 1s ease-out` : css`${slideOutToLeft} 1s ease-out`};
 `;
 
-const SecondDivBox = styled.div`
+const SecondDivBox = styled.div<{ $isVisible: boolean }>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,8 +95,13 @@ const SecondDivFlexItem = styled.div`
     width: 100%;
 `
 
+type S2Props = {
+    handleClick: (event: React.MouseEvent) => void;
+    count: number;
+}
 
-const S2 = ({handleClick, count}) => {
+
+const S2 = ({handleClick, count}: S2Props) => {
     const [isVisible, setIsVisible] = useState(false)
 
     useEffect(()=>{

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./S3.css"
 import styled from 'styled-components';
 import { FaReact, FaHtml5, FaCss3Alt, FaVuejs, FaGithubSquare } from "react-icons/fa";
@@ -121,10 +121,10 @@ const IconStyle = styled.span`
 `;
 
 
-const S3 = ({handleClick}) => {
+const S3 = ({handleClick}: { handleClick: (event: React.MouseEvent) => void }) => {
     const [handleHover, setHandleHover] = useState(0)
 
-    const handleMouseEnter = (c) => {
+    const handleMouseEnter = (c: number) => {
         setHandleHover(c)
     }
 
@@ -168,19 +168,19 @@ const S3 = ({handleClick}) => {
                     </SecondDivBox>
                     <SecondDivBox>
                         <BarDivBox onMouseEnter={()=>handleMouseEnter(1)} onMouseLeave={()=>{handleMouseLeave()}}>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <TitleDivBox>
@@ -189,15 +189,15 @@ const S3 = ({handleClick}) => {
                             </TitleDivBox>
                         </BarDivBox>
                         <BarDivBox onMouseEnter={()=>handleMouseEnter(2)} onMouseLeave={()=>{handleMouseLeave()}}>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <TitleDivBox>
@@ -206,11 +206,11 @@ const S3 = ({handleClick}) => {
                             </TitleDivBox>
                         </BarDivBox>
                         <BarDivBox onMouseEnter={()=>handleMouseEnter(3)} onMouseLeave={()=>{handleMouseLeave()}}>
-                            <svg width="100%" height="15px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="15px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="15px" style={{fill: '#cff37b'}} />
                             </svg>
                             <div style={{padding: '0.5vh'}}></div>
-                            <svg width="100%" height="30px" style={{alignItem: 'center', display: 'flex', justifyContent: 'center'}}>
+                            <svg width="100%" height="30px" style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                                 <rect width="100%" height="30px" style={{fill: '#cff37b'}} />
                             </svg>
                             <TitleDivBox>
