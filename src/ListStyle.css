@@ -5,8 +5,8 @@
     padding: 0;
     margin: 0;
     position: fixed; /* 고정 위치 */
-    right: 100px; /* 우측에서 20px 떨어진 곳 */
-    bottom: 30%; /* 하단에서 20px 떨어진 곳 */
+    right: 50px; /* 우측에서 20px 떨어진 곳 */
+    bottom: 80px; /* 하단에서 20px 떨어진 곳 */
     z-index: 1000; /* 다른 요소 위에 오도록 zIndex 설정 */
 }
 

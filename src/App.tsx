@@ -38,7 +38,7 @@ function App() {
   return (
     <div id="canvas">
       <S1 handleClick={handleClick}></S1>
-      <S2 handleClick={handleClick}></S2>
+      <S2 handleClick={handleClick} count={count}></S2>
       <S3 handleClick={handleClick}></S3>
       <S4 handleClick={handleClick}></S4>
       <S5 handleClick={handleClick}></S5>
