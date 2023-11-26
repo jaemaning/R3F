@@ -4,7 +4,6 @@ import S1 from "./S1"
 import S2 from "./S2"
 import S3 from "./S3"
 import S4 from "./S4"
-import S5 from "./S5"
 import FloatingButton from "./FloatingButton"
 
 
@@ -28,7 +27,7 @@ function App() {
     }
   }, [dimensionHeight, count])
 
-  function handleClick(e : click) {
+  function handleClick(e : React.MouseEvent) {
     console.log(e)
     e.preventDefault
     setCount(count+1)
@@ -38,11 +37,10 @@ function App() {
   return (
     <div id="canvas">
       <S1 handleClick={handleClick}></S1>
-      <S2 handleClick={handleClick}></S2>
+      <S2 handleClick={handleClick} count={count}></S2>
       <S3 handleClick={handleClick}></S3>
       <S4 handleClick={handleClick}></S4>
-      <S5 handleClick={handleClick}></S5>
-      <FloatingButton count={count} setCount={setCount} setDimensionHeight={setDimensionHeight} dimensionHeight={dimensionHeight}></FloatingButton>
+      <FloatingButton count={count} setCount={setCount} setDimensionHeight={setDimensionHeight}></FloatingButton>
     </div>
   )
 }
